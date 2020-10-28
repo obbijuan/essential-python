@@ -18,6 +18,7 @@ class Card:
 
     def __str__(self):
         return str(self.__class__.__name__) + ": " + str(self.__dict__)
+        # return f'{self.__class__.__name__} {repr(self._points())} '
 
     def _points(self) -> Tuple[int, int]:
         return int(self.rank), int(self.rank)
@@ -44,11 +45,11 @@ def card(rank: int, suit: Suit) -> Card:
     raise Exception("Design Failure")
 
 
-cards = [AceCard('A', Suit.Spade), Card('2', Suit.Spade), FaceCard('Q', Suit.Spade),]
+cards = [AceCard('A', Suit.Spade), Card('2', Suit.Diamond), FaceCard('Q', Suit.Club),]
 for x in cards:             
     print(x)
 
-cards2 = [ card(rank, suit) for rank in range(1,14) for suit in Suit.Diamond ]
+cards2 = [ card(rank, suit) for rank in range(1,14) for suit in Suit.Heart ]
 for x in cards2:             
     print(x)
 
