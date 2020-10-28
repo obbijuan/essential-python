@@ -33,10 +33,14 @@ def card(rank: int, suit: Suit) -> Card:
         return AceCard("A", suit)
     elif 2 <= rank < 11:
         return Card(str(rank), suit)
-    elif 11 <= rank < 14:
-        name = {11: "J", 12: "Q", 13: "K"}[rank]
-        return FaceCard(name, suit)
-    raise Exception("Design Failure")
+    elif rank == 11:
+        return FaceCard("J", suit)
+    elif rank == 12:
+        return FaceCard("Q", suit)
+    elif rank == 13:
+        return FaceCard("K", suit)
+    else:
+        raise Exception("Rank out of range")
 
 
 """We can now create Cards."""
