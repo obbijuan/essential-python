@@ -1,16 +1,13 @@
 from typing import Tuple
 from enum import Enum
 
-
 class Suit(str, Enum):
     Club = "♣"
     Diamond = "♦"
     Heart = "♥"
     Spade = "♠"
 
-
 class Card:
-
     def __init__(self, rank: str, suit: str) -> None:
         self.suit = suit
         self.rank = rank
@@ -18,22 +15,19 @@ class Card:
 
     def __str__(self):
         return str(self.__class__.__name__) + ": " + str(self.__dict__)
-        # return f'{self.__class__.__name__} {repr(self._points())} '
 
     def _points(self) -> Tuple[int, int]:
         return int(self.rank), int(self.rank)
 
 class AceCard(Card):
-
     def _points(self) -> Tuple[int, int]:
         return 1, 11
 
 class FaceCard(Card):
-
     def _points(self) -> Tuple[int, int]:
         return 10, 10
 
-
+"""The following is a factory function for our various Card subclasses"""
 def card(rank: int, suit: Suit) -> Card:
     if rank == 1:
         return AceCard("A", suit)
@@ -45,11 +39,14 @@ def card(rank: int, suit: Suit) -> Card:
     raise Exception("Design Failure")
 
 
+"""We can now create Cards."""
 cards = [AceCard('A', Suit.Spade), Card('2', Suit.Diamond), FaceCard('Q', Suit.Club),]
 for x in cards:             
     print(x)
 
-cards2 = [ card(rank, suit) for rank in range(1,14) for suit in Suit.Heart ]
-for x in cards2:             
-    print(x)
 
+"""All deck of 52 cards."""
+"""This works nicely, because the Enum subclasses will iterate over the list of enumerated values."""
+deck = [ card(rank, suit) for rank in range(1,14) for suit in list(Suit) ]
+for x in deck:             
+    print(x)
