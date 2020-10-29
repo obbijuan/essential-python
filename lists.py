@@ -29,24 +29,29 @@ new_marxes = marxes[0:2]
 print(new_marxes)
 # ['Groucho', 'Chico']
 
+
 """ Starts at the beginning and goes right by 2 """
 new_marxes_2 = marxes[::2]
 print(new_marxes_2)
 # ['Groucho', 'Harpo']
+
 
 """ Here, we start at the end and go left by 2 """
 new_marxes_3 = marxes[::-2]
 print(new_marxes_3)
 # ['Harpo', 'Groucho']
 
+
 """ Reverse a list """
 reverse_marxes = marxes[::-1]
 print(reverse_marxes)
 # ['Harpo', 'Chico', 'Groucho']
 
+
 """ The reverse() function changes the list but doesn’t return its value. """
 marxes.reverse()
 print(marxes)
+
 
 """ Add an Item to the End """
 marxes = ['Groucho', 'Chico', 'Harpo']
@@ -54,14 +59,17 @@ marxes.append('Zeppo')
 print(marxes)
 # ['Groucho', 'Chico', 'Harpo', 'Zeppo']
 
+
 """ Add an Item by Offset with insert() """
 marxes.insert(2, 'Gummo')
 print(marxes)
 # ['Groucho', 'Chico', 'Gummo', 'Harpo', 'Zeppo']
 
+
 """Duplicate All Items with *"""
 print(["blah"] * 3)
 # ['blah', 'blah', 'blah']
+
 
 """ Combine Lists by Using extend() """
 marxes = ['Groucho', 'Chico', 'Harpo', 'Zeppo']
@@ -70,8 +78,24 @@ marxes.extend(others)
 print(marxes)
 # ['Groucho', 'Chico', 'Harpo', 'Zeppo', 'Gummo', 'Karl']
 
+
+""" If we had used append(), others would have been added 
+as a single list item rather than merging its items """
+marxes = ['Groucho', 'Chico', 'Harpo', 'Zeppo']
+others = ['Gummo', 'Karl']
+marxes.append(others)
+print(marxes)
+# ['Groucho', 'Chico', 'Harpo', 'Zeppo', ['Gummo', 'Karl']]
+
+
 """ Change an Item by [offset] """
 marxes = ['Groucho', 'Chico', 'Harpo']
 marxes[2] = 'Wanda'
 print(marxes)
 # ['Groucho', 'Chico', 'Wanda']
+
+
+""" Change Items with a Slice """
+numbers = [1,2,3,4]
+numbers[1:3] = [8,9]
+print(numbers)
