@@ -96,6 +96,53 @@ print(marxes)
 
 
 """ Change Items with a Slice """
-numbers = [1,2,3,4]
-numbers[1:3] = [8,9]
+numbers = [1,2,3,20,21,22]
+numbers[3:5] = [8,9,10,11]
 print(numbers)
+# [1, 2, 3, 8, 9, 10, 11, 22]
+
+numbers = [1, 2, 3, 4]
+numbers[1:3] =  (98, 99, 100)
+print(numbers)
+# [1, 98, 99, 100, 4]
+
+""" Delete an Item by Offset with del """
+marxes = ['Groucho', 'Chico', 'Harpo', 'Gummo', 'Karl']
+del marxes[-1]
+print(marxes)
+# ['Groucho', 'Chico', 'Harpo', 'Gummo']
+
+marxes = ['Groucho', 'Chico', 'Harpo', 'Gummo']
+del marxes[1]
+print(marxes)
+
+""" Delete an Item by Value with remove() """
+marxes = ['Groucho', 'Harpo', 'Gummo']
+marxes.remove('Harpo')
+print(marxes)
+
+
+""" Get an Item by Offset and Delete It with pop() """
+marxes = ['Groucho', 'Chico', 'Harpo', 'Zeppo']
+marxes.pop(1)
+print(marxes)
+# ['Groucho', 'Harpo', 'Zeppo']
+
+""" Find an Item’s Offset by Value with index() """
+marxes = ['Groucho', 'Chico', 'Harpo', 'Zeppo']
+print(marxes.index('Harpo'))
+# 2
+# If the value is in the list more than once, only the offset of the first one is returned.
+
+
+""" The Pythonic way to check for the existence of a value in a list is using in. """
+words = ['a', 'deer', 'a' 'female', 'deer']
+print('deer' in words)
+# True
+
+
+""" Count Occurrences of a Value with count() """
+snl_skit = ['cheeseburger', 'cheeseburger', 'cangreburger', 'cheeseburger']
+print(snl_skit.count('cheeseburger'))
+# 3
+
