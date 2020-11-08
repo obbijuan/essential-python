@@ -146,3 +146,22 @@ snl_skit = ['cheeseburger', 'cheeseburger', 'cangreburger', 'cheeseburger']
 print(snl_skit.count('cheeseburger'))
 # 3
 
+""" Convert a List to a String with join() """
+separator = " | "
+friends = ['Harry', 'Hermione', 'Ron']
+joined = separator.join(friends)
+print(joined)
+# Harry | Hermione | Ron
+separated = joined.split(separator)
+print(separated)
+
+""" Reorder Items with sort() or sorted() """
+marxes = ['Groucho', 'Chico', 'Harpo']
+sorted_marxes = sorted(marxes)
+print(sorted_marxes)
+# ['Chico', 'Groucho', 'Harpo']
+
+marxes = ['Harpo', 'Groucho', 'Chico']
+marxes.sort()
+print(marxes)
+# ['Chico', 'Groucho', 'Harpo']
